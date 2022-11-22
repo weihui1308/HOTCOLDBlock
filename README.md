@@ -9,5 +9,6 @@ Official Pytorch implementation for our AAAI 2023 paper HOTCOLD Block: Fooling T
 ## Installation
 ```
 git clone https://github.com/weihui1308/HOTCOLDBlock
+cd HOTCOLDBlock-main
 pip install -r requirements.txt
 ```
