@@ -1,4 +1,4 @@
-# HotCold_Block
+# HOTCOLD Block
 Official Pytorch implementation for our AAAI 2023 paper HOTCOLD Block: Fooling Thermal Infrared Detectors with a Novel Wearable Design
 
 ![Figure](https://raw.githubusercontent.com/weihui1308/HOTCOLDBlock/main/images/1.png)
