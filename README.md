@@ -1,7 +1,7 @@
 # HOTCOLD Block
 Official Pytorch implementation for our AAAI 2023 paper HOTCOLD Block: Fooling Thermal Infrared Detectors with a Novel Wearable Design
 
-![Figure](https://raw.githubusercontent.com/weihui1308/HOTCOLDBlock/main/images/1.png)
+![Figure](https://github.com/weihui1308/HOTCOLDBlock/blob/main/assets/1.png?raw=true)
 
 ## Requirements
 - python 3.9
