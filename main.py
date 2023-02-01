@@ -147,12 +147,8 @@ if __name__ == '__main__':
     names = {k: v for k, v in enumerate(model.names if hasattr(model, 'names') else model.module.names)}
     best_fitness = 100.0
     
-    train_ls = []
-    train_obj_ls = []
-    train_tv_ls = []
     for epoch in range(opt.epochs):  # epoch ------------------------------------------------------------------
         pbar = enumerate(train_loader)
-        LOGGER.info(('\n' + '%10s' * 7) % ('Epoch', 'gpu_mem', 'loss', 'TV_loss', 'OBJ_loss', 'labels', 'img_size'))
         pbar = tqdm(pbar, total=nb, bar_format='{l_bar}{bar:10}{r_bar}{bar:-10b}')
         
         for i, (imgs, targets, paths, _) in pbar:  # batch -------------------------------------------------------------
