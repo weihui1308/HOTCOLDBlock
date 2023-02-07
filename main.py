@@ -47,7 +47,6 @@ from utils.torch_utils import EarlyStopping, ModelEMA, de_parallel, select_devic
 from utils.metrics import fitness
 
 from utils_patch import *
-from loss_patch import TotalVariation, get_tvLoss
 import val_patch
 from pso import OptimizeFunction, PSO
 
