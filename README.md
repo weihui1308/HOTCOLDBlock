@@ -23,7 +23,7 @@ pip install -r requirements.txt
 4. Put the obtained dataset in YOLO format in the "dataset/FLIR_ADAS" folder.
 ### Model
 1. Download the YOLOv5 pre-trained model. In this work, we use the [YOLOv5s.pt](https://github.com/ultralytics/yolov5).
-2. Fine-tune the pre-trained YOLOv5 model on the pre-processed FLIR ADAS dataset. You can download the model of our training at [Google Drive](https://drive.google.com/file/d/1gDL6baVFYgk_Lt9LPoZ0WXHQdVWU3kYy/view?usp=share_link).
+2. Fine-tune the pre-trained YOLOv5 model on the "dataset/FLIR_ADAS". You can download the model of our training at [Google Drive](https://drive.google.com/file/d/1gDL6baVFYgk_Lt9LPoZ0WXHQdVWU3kYy/view?usp=share_link).
 
 ## Citation
 If you find this repository useful, please consider citing our paper:
