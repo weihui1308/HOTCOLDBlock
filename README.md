@@ -7,14 +7,12 @@ Official Pytorch implementation for our AAAI 2023 paper [HOTCOLD Block: Fooling 
 - python 3.9
 - Pytorch 1.10
 - At least 1x12GB NVIDIA GPU
-
 ## Installation
 ```
 git clone https://github.com/weihui1308/HOTCOLDBlock
 cd HOTCOLDBlock-main
 pip install -r requirements.txt
 ```
-
 ## Preparation
 ### Dataset
 1. Download the complete [FLIR ADAS Dataset](https://adas-dataset-v2.flirconservator.com/#downloadguide) and convert its annotation format to the YOLO format.
