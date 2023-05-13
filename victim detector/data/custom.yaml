@@ -1,0 +1,7 @@
+path: path/FLIR ADAS Dataset/
+train: images/train
+val: images/val
+
+# Classes
+nc: 1  # number of classes
+names: ['pedestrian']  # class names

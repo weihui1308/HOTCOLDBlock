@@ -22,6 +22,12 @@ pip install -r requirements.txt
 ### Model
 1. Download the YOLOv5 pre-trained model. In this work, we use the [YOLOv5s.pt](https://github.com/ultralytics/yolov5).
 2. Fine-tune the pre-trained YOLOv5 model on the "dataset/FLIR_ADAS". You can download the model of our training at [Google Drive](https://drive.google.com/file/d/1gDL6baVFYgk_Lt9LPoZ0WXHQdVWU3kYy/view?usp=share_link).
+### train and val
+Once you have setup your path, you can run an experiment like so:
+```
+python main.py --epochs 5 
+```
+The terminal will print the gbest_position and gbest_value.
 
 ## Citation
 If you find this repository useful, please consider citing our paper:
@@ -33,3 +39,6 @@ If you find this repository useful, please consider citing our paper:
   year={2023}
 }
 ```
+
+## Acknowledgements
+We would like to acknowledge the YOLOv5 open-source library (https://github.com/ultralytics/yolov5). YOLOv5 is a powerful object detection algorithm that has greatly facilitated our development efforts. We are grateful to the developers and contributors of YOLOv5 for making their work available to the community.
