@@ -1,6 +1,6 @@
 import torch
 import argparse
-from models.yolo import Model
+from victim_detector.models.yolo import Model
 import argparse
 import math
 import os
@@ -30,21 +30,21 @@ if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
-from models.common import *
-from models.experimental import *
-from utils.autoanchor import check_anchor_order
-from utils.general import (LOGGER, check_dataset, check_file, check_git_status, check_img_size, check_requirements,
+from victim_detector.models.common import *
+from victim_detector.models.experimental import *
+from victim_detector.utils.autoanchor import check_anchor_order
+from victim_detector.utils.general import (LOGGER, check_dataset, check_file, check_git_status, check_img_size, check_requirements,
                            check_suffix, check_yaml, colorstr, get_latest_run, increment_path, init_seeds,
                            intersect_dicts, labels_to_class_weights, labels_to_image_weights, methods, one_cycle,
                            print_args, print_mutation, strip_optimizer)
-from utils.plots import feature_visualization
-from utils.torch_utils import (fuse_conv_and_bn, initialize_weights, model_info, profile, scale_img, select_device,
+from victim_detector.utils.plots import feature_visualization
+from victim_detector.utils.torch_utils import (fuse_conv_and_bn, initialize_weights, model_info, profile, scale_img, select_device,
                                time_sync)
-from utils.loss import ComputeLoss, MyComputeLoss
-from utils.datasets import create_dataloader
-from utils.autobatch import check_train_batch_size
-from utils.torch_utils import EarlyStopping, ModelEMA, de_parallel, select_device, torch_distributed_zero_first
-from utils.metrics import fitness
+from victim_detector.utils.loss import ComputeLoss, MyComputeLoss
+from victim_detector.utils.datasets import create_dataloader
+from victim_detector.utils.autobatch import check_train_batch_size
+from victim_detector.utils.torch_utils import EarlyStopping, ModelEMA, de_parallel, select_device, torch_distributed_zero_first
+from victim_detector.utils.metrics import fitness
 
 from utils_patch import *
 import val_patch
@@ -56,13 +56,13 @@ LOCAL_RANK = int(os.getenv('LOCAL_RANK', -1))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--cfg', type=str, default='models/yolov5s.yaml', help='model.yaml')
+    parser.add_argument('--cfg', type=str, default='victim_detector/models/yolov5s.yaml', help='model.yaml')
     parser.add_argument('--batch_size', type=int, default=32, help='total batch size for all GPUs')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--profile', action='store_true', help='profile model speed')
     parser.add_argument('--line-profile', action='store_true', help='profile model speed layer by layer')
     parser.add_argument('--test', action='store_true', help='test all yolo*.yaml')
-    parser.add_argument('--data', type=str, default=ROOT / 'data/custom.yaml', help='dataset.yaml path')
+    parser.add_argument('--data', type=str, default=ROOT / 'victim_detector/data/custom.yaml', help='dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='train, val image size (pixels)')
     parser.add_argument('--single-cls', action='store_true', help='train multi-class data as single-class')
     parser.add_argument('--quad', action='store_true', help='quad dataloader')
@@ -83,12 +83,12 @@ if __name__ == '__main__':
     device = select_device(opt.device)
     
     # Create model
-    hyp = 'data/hyps/hyp.scratch-low.yaml'
+    hyp = 'victim_detector/data/hyps/hyp.scratch-low.yaml'
     if isinstance(hyp, str):
         with open(hyp, errors='ignore') as f:
             hyp = yaml.safe_load(f)
     
-    weights = "runs/train/exp/weights/best.pt"
+    weights = "xxx/best.pt"
     ckpt = torch.load(weights, map_location='cpu')
     model = Model(ckpt['model'].yaml, ch=3, nc=80, anchors=hyp.get('anchors')).to(device)
     exclude = ['anchor'] if (hyp.get('anchors')) and not resume else []

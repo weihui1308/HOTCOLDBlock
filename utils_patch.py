@@ -88,7 +88,7 @@ class PatchApplier(nn.Module):
         patch_mask = patch_mask_tf - 1
         patch_mask = - patch_mask
 
-        img_batch = torch.mul(img_batch, patch_mask) + patch
+        img_batch = torch.mul(img_batch, patch_mask) + torch.mul(patch, patch_mask_tf)
 
         imgWithPatch = img_batch
         return imgWithPatch

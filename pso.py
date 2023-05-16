@@ -4,15 +4,15 @@ import torch
 import numpy as np
 import torch.nn as nn
 import torchvision.transforms as TF
-from utils_patch import PatchApplier_v1
-from ptop import ParticleToPatch_One
+from utils_patch import PatchApplier
+from ptop import ParticleToPatch
 
 
 class OptimizeFunction:
     def __init__(self, detector, patch_size, device):
         self.detector = detector
         self.device = device
-        self.ptp = ParticleToPatch_One(patch_size)
+        self.ptp = ParticleToPatch(patch_size)
         self.pa = PatchApplier_v1()
         self.size = 0
         self.num_patch = 1
