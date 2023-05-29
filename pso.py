@@ -13,7 +13,7 @@ class OptimizeFunction:
         self.detector = detector
         self.device = device
         self.ptp = ParticleToPatch(patch_size)
-        self.pa = PatchApplier_v1()
+        self.pa = PatchApplier()
         self.size = 0
         self.num_patch = 1
         self.patch_size = patch_size
