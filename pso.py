@@ -107,7 +107,7 @@ class PSO:
         self.gbest_value = torch.Tensor([float("inf")]).to(device)
         self.swarm = []
         for i in range(self.swarm_size):
-            self.swarm.append(Particle(dimensions=1, device=device))         # dimension
+            self.swarm.append(Particle(dimensions=4, device=device))         # dimension
         
     
     def optimize(self, function):
