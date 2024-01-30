@@ -123,16 +123,13 @@ class PSO:
             # --- Set PBest
             for particle in self.swarm:
                 fitness_candidate = self.fitness_function.evaluate(particle.position)
-                #break
                 if (particle.pbest_value > fitness_candidate):
                     particle.pbest_value = fitness_candidate
                     particle.pbest_position[0] = particle.position[0].clone()
                     particle.pbest_position[1] = particle.position[1].clone()
-            # --- Set GBest
-            for particle in self.swarm:
-                best_fitness_candidate = self.fitness_function.evaluate(particle.position)
-                if self.gbest_value > best_fitness_candidate:
-                    self.gbest_value = best_fitness_candidate
+                # --- Set GBest
+                if self.gbest_value > fitness_candidate:
+                    self.gbest_value = fitness_candidate
                     self.gbest_position[0] = particle.position[0].clone()
                     self.gbest_position[1] = particle.position[1].clone()
                     self.gbest_particle = copy.deepcopy(particle)
