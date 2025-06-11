@@ -4,8 +4,6 @@ import cv2
 import pandas as pd
 from PIL import Image
 
-from utils import *
-
 def coco91_to_coco80_class():  # converts 80-index (val2014) to 91-index (paper)
     # https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/
     # a = np.loadtxt('data/coco.names', dtype='str', delimiter='\n')
