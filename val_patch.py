@@ -146,8 +146,8 @@ def run(
     iouv = torch.linspace(0.5, 0.95, 10, device=device)  # iou vector for mAP@0.5:0.95
     niou = iouv.numel()
     
-    ptp = ParticleToPatch_Four(opt.patch_size)
-    pa = PatchApplier_v1()
+    ptp = ParticleToPatch(opt.patch_size)
+    pa = PatchApplier()
 
     # Dataloader
     if not training:
@@ -412,3 +412,4 @@ if __name__ == "__main__":
     
     
     
+
